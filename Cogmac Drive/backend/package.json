@@ -1,0 +1,51 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "start": "cd src && nodemon --watch . --ignore uploads server.ts",
+    "build": "npm install && tsc",
+    "watch": "nodemon --ext js,html,css --watch src/server.ts --ignore src/uploads ../../frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "file",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.7.2",
+    "@types/validator": "^13.12.2",
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-async-handler": "^1.2.0",
+    "google-auth-library": "^9.15.0",
+    "googleapis": "^144.0.0",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.3",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.2",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "@types/connect-livereload": "^0.6.3",
+    "@types/cors": "^2.8.17",
+    "@types/express-session": "^1.18.1",
+    "@types/livereload": "^0.9.5",
+    "@types/multer": "^1.4.12",
+    "connect-livereload": "^0.6.1",
+    "express-session": "^1.18.1",
+    "livereload": "^0.9.3",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
+  }
+}

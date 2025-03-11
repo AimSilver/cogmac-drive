@@ -1,0 +1,13 @@
+.addRole-drive-logo {
+  height: 50px;
+  width: 120px;
+  border-radius: 10px;
+  opacity: 70%;
+}
+#exampleModalLongTitle {
+  color: #555;
+  margin-left: 185px;
+}
+#exampleModalLongTitle:hover {
+  color: black;
+}

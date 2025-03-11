@@ -1,0 +1,194 @@
+<!-- profile modal html -->
+<link rel="stylesheet" href="/src/app/components/profile/profile.css" />
+<div
+  class="modal fade"
+  tabindex="-1"
+  aria-modal="true"
+  id="profile-modal"
+  style="pointer-events: none"
+>
+  <div class="d-flex flex-row-reverse">
+    <button
+      type="button"
+      class="btn-close"
+      id="close-modal"
+      data-dismiss="modal"
+      aria-label="close"
+    >
+      Close
+    </button>
+  </div>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content profile-content">
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <div
+          class="profile-id mt-4 mb-3"
+          style="font-size: 16px"
+          id="profile-email"
+        ></div>
+        <div class="modal-profile mt-4" id="modal-profile-picture"></div>
+        <div class="profile-name mt-1">
+          Hi, <span id="profile-name"></span>!<i
+            class="fas fa-edit ml-2"
+            id="edit-profile-name"
+            style="cursor: pointer; font-size: 20px"
+          ></i>
+        </div>
+        <div class="mt-4">
+          <button
+            class="btn btn-outline-primary manage-profile"
+            id="manage-profile-acc"
+          >
+            Manage Your Account
+          </button>
+        </div>
+        <div class="mt-5">
+          <button
+            class="btn btn-dark"
+            style="border-radius: 12px; width: 120px; height: 40px"
+            id="profile-signout-btn"
+          >
+            <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp;Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- manage account modal html -->
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+<div
+  class="modal fade bd-example-modal-lg"
+  id="manage-profile-acc-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header p-2">
+        <div>
+          <img class="header-logo" src="../../../assets/logo.png" alt="" />
+        </div>
+        <h5 class="modal-title mt-2 ml-5" id="exampleModalLongTitle">
+          Manage Your Account
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="px-4" id="manage-account-form">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="modal-profile" id="manageacc-profile-picture"></div>
+            <h6 class="mt-2" id="manage-acc-email"></h6>
+          </div>
+          <div class="form-group profile-details mt-0">
+            <label for="name">New Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-control"
+              placeholder="Enter New Name"
+              style="height: 33px"
+            />
+          </div>
+          <div class="form-group profile-details mt-0">
+            <label for="email">New Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control"
+              placeholder="Enter New UserId"
+              style="height: 33px"
+            />
+          </div>
+          <div class="form-group profile-details mt-0">
+            <label for="password">New password</label>
+            <input
+              type="Password"
+              name="password"
+              id="password"
+              class="form-control"
+              placeholder="Enter New Password"
+              style="height: 33px"
+            />
+          </div>
+          <div class="form-group profile-details mt-0">
+            <label for="confirmpassword">Confirm Password</label>
+            <input
+              type="Password"
+              id="confirmpassword"
+              name="confirmpassword"
+              class="form-control"
+              placeholder="Confirm Your Password"
+              style="height: 33px"
+            />
+          </div>
+          <div class="d-flex flex-row-reverse">
+            <button type="submit" class="btn btn-dark btn-sm">Finish</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- rename modal -->
+<div
+  class="modal fade"
+  id="profilerenameModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Rename</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input
+          type="text"
+          class="form-control"
+          id="rename-input"
+          placeholder="Enter New name"
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" id="rename-submit-btn" class="btn btn-primary">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

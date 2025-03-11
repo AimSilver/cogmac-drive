@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+   
+
+    <!-- <link rel="stylesheet" href="css/user.css"> -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+      defer
+    ></script>
+   
+    
+  </head>
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <body>
+    <!--  -->
+    <!-- ----------------------------------header-------------------------------------- -->
+    <!--  -->
+    <header class="d-flex ml-2 mr-2">
+      <div
+        class="mt-2"
+        style="height: 100%; background-color: #e0ffff97; cursor: default"
+      >
+        <div class="mr-5">
+          <img class="logo" src="/src/assets/C.png" alt="" />
+        </div>
+      </div>
+      <div class="header-searchbar mt-2 d-flex w-50 align-items-center">
+        <div class="search-icon"><i class="fas fa-search"></i></div>
+
+        <input
+          type="search"
+          class="search-inputbar"
+          placeholder="Search in Cogmac Drive"
+          aria-label="Search"
+        />
+      </div>
+
+      <div
+        class="profile mt-2"
+        id="profile-modal-btn"
+        
+      ></div>
+      
+
+     
+    </header>
+    <!-- inlcude profile modal html dynamically -->
+    <div class="profile-container" data-include="/src/app/components/admin/profile/profile.html">
+
+    </div>
+    <!--  -->
+    <!----------------------------div containing side bar-------------------  -->
+    <!--  -->
+    <div class="d-flex">
+      <div
+        class="d-inline-flex vh-100 flex-column"
+        style="background-color: rgba(224, 255, 255, 0.594)"
+      >
+        <!--  -->
+        <!--  -->
+        <!-- ------------------------Html for new button--------------------------------------------------------- -->
+        <!--  -->
+        <!--  -->
+
+        <!--  -->
+        <!--  -->
+        <!-- --------------------------html for side nav bar------------------------------------------------------- -->
+        <!--  -->
+        <!--  -->
+        <nav
+          class="nav flex-column nav-pills ml-4"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+          style="width: 200px"
+          data-include="/src/app/components/admin/nav/nav.html"
+        >
+          <a class="nav-link active" id="admin-home-button"  data-target="home" data-toggle="pill"
+            ><i class="fa fa-home"></i> Home</a
+          >
+
+          <a class="nav-link" id="my-drive-button"  data-target="mydrive" data-toggle="pill"
+            ><i class="fa-solid fa-server"></i> My Drive</a
+          >
+
+          <a class="nav-link" id="Recent-button"  data-target="recent" data-toggle="pill"
+            ><i class="fas fa-clock"></i> Recent</a
+          >
+
+          <a class="nav-link" id="trash-container-btn"  data-target="trash" data-toggle="pill"
+            ><i class="fas fa-trash"></i> Trash</a
+          >
+
+          <a class="nav-link" id="usermanagement-btn"    data-target="usermanagement" data-toggle="pill"
+            ><i class="fas fa-users-cog"></i> User Management</a
+          >
+        </nav>
+        <div class="btn-group mr-2" id="new-button-container">
+          <div
+            class="new-button  "
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <span ">
+              <i class="fa fa-angle-double-up text-muted" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="drop">
+            <div class="dropdown-menu popup-container ml-2 mt-5">
+              <a class="dropdown-item" id="dept-btn"
+                ><i
+                  class="fa fa-user-friends"
+                  style="color: rgba(8, 4, 27, 0.46)"
+                ></i
+                >&nbsp;&nbsp;New Department</a
+              >
+              <a class="dropdown-item"
+                ><i
+                  class="fa fa-folder"
+                  aria-hidden="false"
+                  style="color: rgba(8, 4, 27, 0.46)"
+                ></i
+                >&nbsp;&nbsp;New folder</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="admin-file-upload-btn"
+                ><i class="fa fa-upload" style="color: rgba(8, 4, 27, 0.46)"></i
+                >&nbsp;&nbsp;File Upload</a
+              >
+              
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="add-user-btn"
+                ><i
+                  class="fa fa-user-plus"
+                  style="color: rgba(8, 4, 27, 0.46)"
+                ></i
+                >&nbsp;&nbsp;Add User</a
+              >
+              <a class="dropdown-item" id="add-new-role-btn"
+                ><i
+                  class="fa fa-user-tie"
+                  style="color: rgba(8, 4, 27, 0.46)"
+                ></i
+                >&nbsp;&nbsp;Add Role</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="department-form"
+          data-include="/src/app/components/admin/department/department.html"
+        ></div>
+        <div
+          class="add-user-form"
+          data-include="/src/app/components/admin/addUser/addUser.html"
+        ></div>
+        <div class="add-new-role-form" data-include="/src/app/components/admin/addRole/addRole.html"></div>
+      </div>
+      <!-------------------------------------------------------------------------------------  -->
+      <!-------------------------------------------------------------------------------------  -->
+      <!-------------------------------------------------------------------------------------  -->
+
+      <div class="container">
+        <!--  -->
+        <!--  -->
+        <!------------- for home nav option------------------- -->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="home" data-include="/src/app/components/admin/home/home.html">
+          <div
+            class="ml-3 mt-4 display-4"
+            style="cursor: default; font-size: 30px"
+          >
+            Welcome to Cogmac Drive
+          </div>
+          <div class=" mt-2">
+            <div class="container mt-3">
+              <div id="folders"><h6 style="cursor: default">Folders</h6></div>
+              <div class="container mt-4">
+                <div class="row">
+                  <div class="col-sm folder">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+                    <span class="folder-text">Untitled folder 1</span>
+
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-sm folder">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+                    <span class="folder-text">Untitled folder 2</span>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-sm folder">
+                    <i class="fa fa-folder" aria-hidden="true"></i>
+                    <span class="folder-text">Untitled folder 3</span>
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+              <div><h6 style="cursor: default">Files</h6></div>
+              <div class="container  mt-4">
+                <div class="row file-heading">
+                  <div class="col-sm-6">Name</div>
+                  <div class="col-sm-3 file-title">Owner</div>
+                  <div class="col-sm-2 file-title">Last modified</div>
+                  <div class="col-sm-auto ">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class=" card-body mt-2" style="overflow-y: auto;max-height: 300px;height: 400px;"  id="home-container-body" >
+             
+          
+          
+              
+                </div>
+                
+              </div>
+            
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!-- for Mydrive nav option------------------- -------------------------------->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="mydrive">
+          <div class="mt-4 ml-4" style="font-weight: 400; font-size: 25px">
+            My Drive
+          </div>
+          <div class="container card mt-4 " id="mydrive-container-card">
+            <div class="row card-header file-heading">
+              <div class="col-sm-4">Name</div>
+              <div class="col-sm-3 file-title">Owner</div>
+              
+              <div class="col-sm-2 file-title">Size</div>
+              <div class="col-sm-2 file-title">Last modified</div>
+              <div class="col-sm-1 file-title"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+            </div>
+            <div class="card-body files" style="overflow-y: auto; max-height: 400px;height: 500px;" id="mydrive-container-body">
+              
+             
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!-- -------------------------for recent nav option---------------------------------------------- -->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="recent">
+          <div class="mt-4 ml-4" style="font-weight: 400; font-size: 25px">
+            Recent
+          </div>
+          <div class="container mt-4 card" id="recent-container-card">
+            <div class="row card-header file-heading">
+              <div class="col-sm-6">Name</div>
+              <div class="col-sm-3 file-title">UserId</div>
+              
+              <div class="col-sm-2 file-title">Size</div>
+              
+              <div class="col-sm-1 file-title">   
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              </div>
+
+            </div>
+            <div class=" card-body mt-2 files" style="overflow-y: auto; max-height: 400px;height: 400px;" id="recent-files-container-body">
+             
+          
+          
+              
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!------------------------------for trash nav option  ---------------------------------->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="trash">
+          <div class="mt-4 ml-4" style="font-weight: 400; font-size: 25px">
+            Trash
+          </div>
+          <div class="container card mt-4 " id="trash-container-card">
+            <div class="row card-header file-heading">
+              <div class="col-sm-4">File</div>
+              <div class="col-sm-3 file-title">Owner</div>
+              <div class="col-sm-2 file-title">Trashed On</div>
+              <div class="col-sm-2 file-title">Size</div>
+              
+              <div class="col-sm-auto file-title"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+            </div>
+            <div class="card-body files" style="overflow-y: auto; max-height: 400px;height: 500px;" id="trash-container-body">
+              
+             
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!-------------------------------------for usermanagement nav option  ------------------------------->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="usermanagement">
+          <div
+            class="mt-4 "
+            id="usermgmtTitle"
+            style="font-weight: 400; font-size: 25px"
+          >
+            Manage Users
+          </div>
+          <div class="container card  mt-5">
+            <div class="row card-header file-heading" >
+              <div class="col-sm-2 ">Name</div>
+              <div class="col-sm-3 file-title">Email</div>
+              <div class="col-sm-5 pr-4 file-title">Departments/Roles</div>
+              
+              <div class="col-sm-1 file-title">Status</div>
+              <div class="col-sm-1 file-title"><i
+                class="fa fa-ellipsis-v "
+                
+                aria-hidden="true"
+              >
+              </i></div>
+            </div>
+            <div class="files-usermgmt card-body " id="usermgmt-files" >
+            
+              
+ 
+
+             
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- file upload container ,data will be handle and added dynamically to this -->
+    <div class="fileUploadContainer" data-include="/src/app/components/fileUpload/uploadFiles.html"></div>
+   
+    <script src="app.js" type="module" ></script>
+  </body>
+</html>

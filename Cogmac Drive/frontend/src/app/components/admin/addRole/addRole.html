@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="/src/app/components/admin/addRole/addRole.css" />
+<div
+  class="modal fade bd-example-modal-lg"
+  id="addNewRoleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex align-items-center">
+        <img src="/src/assets/logo.png" class="addRole-drive-logo" />
+        <h4 class="modal-title" id="exampleModalLongTitle">Manage Roles</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="card col m-2 p-0">
+            <div
+              class="card-header d-flex align-items-center justify-content-center"
+              style="height: 30px; width: 100%; color: rgba(59, 5, 5, 0.773)"
+            >
+              <h6 class="mt-2">Roles</h6>
+            </div>
+            <div
+              class="card-body"
+              id="roles-conatiner"
+              style="overflow: auto; max-height: 250px"
+            ></div>
+          </div>
+          <div class="card col m-2 p-0">
+            <div
+              class="card-header d-flex align-items-center justify-content-center"
+              style="height: 30px; width: 100%; color: rgba(59, 5, 5, 0.773)"
+            >
+              <h6 class="mt-2">Add New Role</h6>
+            </div>
+            <div class="card-body">
+              <form id="new-role-form">
+                <div class="form-group" style="color: rgb(85, 11, 11)">
+                  <label for="newrole">New Role</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter New Role"
+                    id="new-role-input"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- confirm deletion modal -->
+<div
+  class="modal fade"
+  id="deleteConfirmationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="deleteConfirmationModalLabel"
+  aria-hidden="true"
+  style="z-index: 99999"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmationModalLabel">
+          Confirm Deletion
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this item?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          No
+        </button>
+        <button type="submit" class="btn btn-danger" id="confirmDeleteButton">
+          Yes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

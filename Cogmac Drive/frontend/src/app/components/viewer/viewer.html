@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Viewer Dashboard</title>
+     <link rel="stylesheet" href="viewer.css">
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+   />
+
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+     crossorigin="anonymous"
+   />
+
+   <!-- <link rel="stylesheet" href="css/user.css"> -->
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script
+     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+     crossorigin="anonymous"
+     defer
+   ></script>
+   <script
+     src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+     crossorigin="anonymous"
+     defer
+   ></script>
+   <script
+     src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+     crossorigin="anonymous"
+     defer
+   ></script>
+             <script src="viewer.js" type="module" defer></script> </head>
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------ -->
+  <body>
+    <!--  -->
+    <!-- ----------------------------------header-------------------------------------- -->
+    <!--  -->
+    <header
+    class="d-flex bg-primary justify-content-between align-items-center"
+  >
+    <img class="logo" src="/src/assets/logo2.png" alt="" />
+
+    <div class="header-searchbar mt-2 d-flex w-50 align-items-center">
+      <div class="search-icon"><i class="fas fa-search"></i></div>
+
+      <input
+        type="search"
+        class="search-inputbar"
+        placeholder="Search in Cogmac Drive"
+        aria-label="Search"
+      />
+    </div>
+
+    <div class="profile mt-2 mr-1" id="profile-modal-btn"></div>
+  </header>
+    <!-- inlcude profile modal html dynamically -->
+    <div
+    class="profile-container"
+    data-include="/src/app/components/profile/profile.html"
+  ></div>
+    <!--  -->
+    <!----------------------------div containing side bar-------------------  -->
+    <!--  -->
+    <div class="d-flex">
+        <div
+          class="d-inline-flex vh-100 flex-column"
+          
+        >
+        <!--  -->
+        <!-- nav title -->
+        <div class="bg-info ml-2 page-title" id="page-title">Welcome</div>
+        <!--  -->
+        <!--  -->
+        <!-- --------------------------html for side nav bar------------------------------------------------------- -->
+        <!--  -->
+        <!--  -->
+        <nav
+          class="nav flex-column nav-pills ml-4"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+          style="width: 200px"
+        >
+          <a class="nav-link " id="home-button" data-target="home" data-toggle="pill"
+            ><i class="fa fa-home"></i> Home</a
+          >
+
+          <a class="nav-link" id="departmentFiles-nav-button" data-target="mydrive" data-toggle="pill"
+            ><i class="fa-solid fa-server"></i> Department Files</a
+          >
+        </nav>
+       
+    </div>
+      <!-------------------------------------------------------------------------------------  -->
+      <!-------------------------------------------------------------------------------------  -->
+      <!-------------------------------------------------------------------------------------  -->
+
+      <div class="container">
+        <!--  -->
+        <!--  -->
+        <!------------- for home nav option------------------- -->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="home">
+          
+          <div class=" mt-4">
+         
+              <div class="bg-primary page-title" id="nav-page-header">Files</div>
+              <div class="container card  mt-4">
+                <div class="row card-header file-heading">
+                  <div class="col-sm-4">Name</div>
+                  <div class="col-sm-3 file-title">Owner</div>
+                 
+                  <div class="col-sm-2 file-title">Size</div>
+                  <div class="col-sm-2 file-title">Department</div>
+                  <div class="col-sm-auto ">
+                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class=" card-body mt-2" style="overflow-y: auto;max-height: 400px;height: 600px;"  id="user-home-container-body" >
+             
+          
+          
+              
+                </div>
+                
+              </div>
+            
+          </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!-- for Depaartmental drive nav option------------------- -------------------------------->
+        <!--  -->
+        <!--  -->
+        <div class="navbar-container show" id="mydrive">
+          <div class="bg-primary page-title" id="nav-page-header">Departmental Drive</div>
+          <div class="container card mt-4 " id="mydrive-container-card">
+            <div class="row card-header file-heading">
+              <div class="col-sm-4">Name</div>
+              <div class="col-sm-3 file-title">Owner</div>
+              
+              <div class="col-sm-2 file-title">Size</div>
+              <div class="col-sm-2 file-title">Last modified</div>
+              <div class="col-sm-1 file-title"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></div>
+            </div>
+            <div class="card-body files" style="overflow-y: auto; max-height: 400px;height: 500px;" id="departmentalDrive-container-body">
+              
+             
+            </div>
+          </div>
+        </div>
+     
+      
+     
+      
+      </div>
+    </div>
+    <div
+    class="new-button"
+    id="active-user-offcanvas-btn"
+    data-toggle="dropdown"
+   
+    data-bs-toggle="offcanvas" 
+    data-bs-target="#offcanvasWithBothOptions" 
+    aria-controls="offcanvasWithBothOptions"
+  >
+    <span ">
+      <i class="fa fa-angle-double-left text-muted" aria-hidden="true"></i>
+    </span>
+  </div>
+  <div class="offcanvas offcanvas-end " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" style="width: 150px;">
+    <div class="offcanvas-header card-header" >
+      <h6 class="offcanvas-title " id="offcanvasWithBothOptionsLabel">Active users</h6>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body card-body m-0 p-0" id="active-users-canvas-body" >
+     <div class="d-flex flex-column justify-content-center ms-1">
+     
+       <div  id="offcanvas-body-row-1">
+         <div class="row d-flex align-items-center ms-1 ">
+           <div class="col d-flex align-items-center">
+             <div class="active-users mt-1"></div> &nbsp;
+             <span class="lead" style="font-size: 18px !important;cursor: pointer;">ashish negi</span>
+           </div>
+         
+          </div>
+         
+      
+       
+        </div>
+      </div>
+    
+  </div>
+</div>
+  
+    <!--  -->
+    <!--                            modal for view files -->
+    <!--  -->
+    <!--  -->
+    <div
+      class="modal fade"
+      id="viewer-view-files-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-xl"
+        role="document"
+        style="height: 100%"
+      >
+        <div class="modal-content" style="height: 100%">
+          <div class="modal-header">
+            <h5 class="modal-title" id="viewer-viewFile-modal-title"></h5>
+            <button
+            id="closeViewerViewFileModalBtn"
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div
+            class="modal-body"
+            style="height: 100%"
+            id="viewer-viewFile-modal-body"
+          ></div>
+        </div>
+      </div>
+    </div>
+   
+   
+  </body>
+</html>

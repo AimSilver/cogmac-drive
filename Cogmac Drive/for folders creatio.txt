@@ -1,0 +1,13 @@
+for folder creation i will asssign a new field to file collection --folderName or folder 
+
+
+then will make a fucntion so admin and managers can create folders and we have to create a new db collection 
+name as folders which will conatin --dept ,foldername,role,
+
+
+so whenver a folder will be cerated then its details will be saved in the folders collection 
+
+and we will create two seperate display for folders and files in home section of both manager and admin
+
+and we will assign a new field folderName in files collection too so that whenver a file will be uploaded it can be uploaded
+insdie any folder and they can copy and paste any file inside a folder or multiple folders 

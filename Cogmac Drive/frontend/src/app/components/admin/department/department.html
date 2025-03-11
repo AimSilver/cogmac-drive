@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="/src/app/components/admin/department/dept.css" />
+<div class="dept-container">
+  <div class="dept">
+    <div class="form-content card">
+      <div
+        class="card-header d-flex p-1 align-items-center justify-content-between"
+      >
+        <div class="d-flex align-items-center">
+          <img src="/src/assets/logo.png" class="dept-drive-logo" />
+          <h4 class="ml-4">Department Managment</h4>
+        </div>
+        <button type="button" class="close mb-4" id="closeBtn">&times;</button>
+      </div>
+      <div class="card-body row m-0 p-0">
+        <div
+          class="col-sm-5 m-2 pl-4 pr-4 pt-4 pb-2"
+          id="dept-list"
+          style="border: solid 1px #ccc; border-radius: 5px"
+        >
+          <div class="row">
+            <h5 class="card-title">Departments Lists</h5>
+          </div>
+          <div class="row d-flex justify-content-around mt-3">
+            <h6>Name</h6>
+            <h6>Action</h6>
+          </div>
+          <div
+            class="dept-list-content btn-primary p-3"
+            id="dept-list-content"
+          ></div>
+        </div>
+
+        <div
+          class="col m-2 pl-4 pr-4 pt-4 pb-2"
+          style="border: solid 1px #ccc; border-radius: 5px"
+        >
+          <div class="row">
+            <h5 class="card-title">Create New Departments</h5>
+          </div>
+
+          <div class="row">
+            <form id="dept-form" style="margin-top: 80px">
+              <div class="form-group">
+                <label for="name" style="margin-top: 5px"
+                  ><h6>Enter New Department Name :</h6></label
+                >
+                <input
+                  class="form-control col"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter Department Name"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer d-flex flex-row-reverse">
+        <button
+          class="btn btn-sm btn-primary create-btn"
+          form="dept-form"
+          type="submit"
+        >
+          Create
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal for confrim deletion of department -->
+<div
+  class="modal fade"
+  id="deleteConfirmationModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="deleteConfirmationModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmationModalLabel">
+          Confirm Deletion
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this item?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          No
+        </button>
+        <button type="submit" class="btn btn-danger" id="confirmDeleteButton">
+          Yes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

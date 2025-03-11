@@ -1,0 +1,53 @@
+/* Drawer style */
+.drawer {
+  position: fixed;
+
+  right: 0;
+  bottom: -350px; /* Initially hidden off-screen */
+  width: 380px;
+  height: auto;
+  max-height: 50%;
+  z-index: 9999999;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 10px;
+  background-color: white;
+
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.6);
+  transition: bottom 0.8s ease-in-out;
+}
+
+#upload-progress-btn {
+  position: fixed;
+  right: 0;
+  bottom: -20px;
+  left: 70%px;
+  position: fixed;
+  width: 30%;
+
+  transition: bottom 0.5s ease-in-out;
+}
+
+#upload-progress-btn.show {
+  bottom: 0;
+}
+
+/* When drawer is open */
+.drawer.open {
+  bottom: 0;
+}
+.progress-bar:focus,
+.progress-bar:hover {
+  outline: none;
+  border: none;
+}
+
+.cancelUploadContainer {
+  position: absolute;
+  right: 0;
+  left: auto;
+  margin-right: 10px;
+
+  z-index: 10000000;
+}

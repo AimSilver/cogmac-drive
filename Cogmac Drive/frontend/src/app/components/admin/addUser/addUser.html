@@ -1,0 +1,104 @@
+<div class="add-user-container">
+  <link rel="stylesheet" href="/src/app/components/admin/addUser/addUser.css" />
+
+  <div class="card add-user-content">
+    <div class="card-header d-flex justify-content-between">
+      <h5 class="text-muted">
+        User Registration
+        <i class="fa fa-user-plus" style="color: rgba(8, 4, 27, 0.46)"></i>
+      </h5>
+      <button type="button" class="close" id="close-adduser">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="card-body p-1 mr-1 ml-1 mb-1" style="border: solid 1px #ccc">
+      <form id="registration-form">
+        <div class="form-row">
+          <div class="col-sm-5">
+            <img class="drive-logo mt-3" src="/src/assets/logo.png" alt="" />
+            <h2 class="card-text mt-3 ml-2">Create a Cogmac</h2>
+            <h2 class="card-text ml-2">Drive Account</h2>
+            <p class="ml-2">Enter User Details</p>
+          </div>
+          <div class="col-sm-3 mt-4">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                name="firstname"
+                placeholder="First Name"
+                required
+              />
+
+              <input
+                type="text"
+                class="form-control form-control-sm mt-2"
+                name="lastname"
+                placeholder="Last Name"
+                required
+              />
+
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control form-control-sm"
+                name="email"
+                required
+                placeholder="Enter your email"
+              />
+
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control form-control-sm"
+                name="password"
+                placeholder="Enter new password"
+              />
+
+              <label for="confirmpassword">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control form-control-sm"
+                name="confirmpassword"
+                placeholder="Confirm your password"
+              />
+            </div>
+          </div>
+          <div class="col-sm-3 mt-4">
+            <div class="form-group">
+              <label for="role">Role</label>
+              <select
+                name="role"
+                class="form-control form-control-sm"
+                id="add-user-role"
+              >
+                <option value="Admin" disabled selected>Select Role</option>
+                <option value="user">User</option>
+                <option value="manager">Manager</option>
+                <option value="viewer">Viewer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="department">Department</label>
+              <select
+                name="department"
+                class="form-control form-control-sm"
+                id="add-user-dept"
+              >
+                <option disabled selected>Assign Department</option>
+                <option value="IT">IT</option>
+                <option value="Software development">
+                  Software Development
+                </option>
+              </select>
+            </div>
+            <div class="d-flex flex-row-reverse" style="margin-top: 130px">
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

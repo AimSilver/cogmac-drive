@@ -1,0 +1,32 @@
+<!-- after google authentication user will redirect to this page  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/app/components/auth/auth.css" />
+    <script src="/src/app/components/auth/auth.js" defer type="module"></script>
+  </head>
+  <body>
+    <div class="authModal" id="login-modal">
+      <div class="auth-modal-content">
+        <div class="mt-2 d-flex align-items-center justify-content-center">
+          <button
+            class="btn btn-lg btn-block btn-dark"
+            style="font-size: 15px; font-weight: 600"
+            id="auth-login-btn"
+          >
+            <img src="/src/assets/logo.png" class="cogmac-logo mr-2 mb-1" />
+            Continue to Cogmac Drive
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

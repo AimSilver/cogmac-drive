@@ -1,0 +1,13 @@
+@types/bcryptjs @types/express @types/jsonwebtoken @types/node
+
+
+
+bcryptjs
+express
+dotenv
+express-async-handler
+jsonwebtoken
+mongoose
+multer 
+typescript
+helmet 
